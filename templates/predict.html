@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card-custom">
+
+  <h2 class="h4 mb-3" style="color:#6b4f3a;">🔮 Loan Prediction</h2>
+
+  {% if result %}
+    <div class="alert alert-light border" style="border-color:#d7c7b5;">
+      <h4 style="color:#6b4f3a;">Result: {{ status }}</h4>
+    </div>
+
+    <h5 style="color:#6b4f3a;">Provided Information</h5>
+    <ul>
+      {% for k,v in provided.items() %}
+      <li><strong>{{ k }}:</strong> {{ v }}</li>
+      {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('predict') }}" class="btn btn-outline-primary mt-3">Try Again</a>
+
+  {% else %}
+
+  <form method="post">
+    <div class="row g-3">
+
+      <div class="col-md-4">
+        <label class="form-label">Gender</label>
+        <select name="gender" class="form-select border" style="border-color:#d7c7b5;">
+          <option>Male</option><option>Female</option>
+        </select>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Married</label>
+        <select name="married" class="form-select border" style="border-color:#d7c7b5;">
+          <option>Yes</option><option>No</option>
+        </select>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Dependents</label>
+        <select name="dependents" class="form-select border" style="border-color:#d7c7b5;">
+          <option>0</option><option>1</option><option>2</option><option>3+</option>
+        </select>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Education</label>
+        <select name="education" class="form-select border" style="border-color:#d7c7b5;">
+          <option>Graduate</option><option>Not Graduate</option>
+        </select>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Self Employed</label>
+        <select name="employed" class="form-select border" style="border-color:#d7c7b5;">
+          <option>Yes</option><option>No</option>
+        </select>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Credit Score</label>
+        <input name="credit" type="number" class="form-control" style="border-color:#d7c7b5;">
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Property Area</label>
+        <select name="area" class="form-select" style="border-color:#d7c7b5;">
+          <option>Urban</option><option>Semiurban</option><option>Rural</option>
+        </select>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Applicant Income</label>
+        <input name="ApplicantIncome" type="number" class="form-control" style="border-color:#d7c7b5;">
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Coapplicant Income</label>
+        <input name="CoapplicantIncome" type="number" class="form-control" style="border-color:#d7c7b5;">
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Loan Amount</label>
+        <input name="LoanAmount" type="number" class="form-control" style="border-color:#d7c7b5;">
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Loan Term</label>
+        <select name="Loan_Amount_Term" class="form-select" style="border-color:#d7c7b5;">
+          <option>360</option><option>240</option><option>180</option><option>120</option>
+        </select>
+      </div>
+
+    </div>
+
+    <button class="btn btn-primary mt-4">Predict Loan Status</button>
+
+  </form>
+  {% endif %}
+</div>
+{% endblock %}

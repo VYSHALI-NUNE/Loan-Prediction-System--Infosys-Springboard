@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card-custom mb-4">
+  <div class="row align-items-center">
+
+    <!-- Left Side: Text Section -->
+    <div class="col-lg-8">
+
+      <h1 class="display-6 mb-3" style="color:#6b4f3a;">
+        🚀 Loan Prediction System
+      </h1>
+
+      <p class="lead" style="color:#4a3f35;">
+        Welcome to the Loan Prediction System! This tool helps you check whether your loan application
+        may be approved using a machine learning model trained on real financial patterns.
+      </p>
+
+      <h4 class="mt-4" style="color:#6b4f3a;">🛠️ Project Overview</h4>
+      <p style="color:#4a3f35;">
+        Developed as part of my AI Internship at Infosys Springboard,
+        this project uses Logistic Regression and Decision Tree models to classify loan eligibility.
+        With advanced preprocessing and model evaluation, it provides fast, reliable predictions.
+      </p>
+
+      <h5 class="mt-4" style="color:#6b4f3a;">🌐 Connect With Me</h5>
+      <p style="color:#4a3f35;">
+        <a href="https://github.com/VYSHALI-NUNE" target="_blank" style="color:#6b4f3a; text-decoration:none; font-weight:500;">
+          GitHub
+        </a>
+        •
+        <a href="https://www.linkedin.com/in/vyshali-nune-589b8b2b0/" target="_blank" style="color:#6b4f3a; text-decoration:none; font-weight:500;">
+          LinkedIn
+        </a>
+        <br>Email: <strong>vyshalinune2004@gmail.com</strong>
+      </p>
+
+      <div class="mt-4 d-flex gap-2">
+        <a href="{{ url_for('predict') }}" class="btn btn-primary">Start Prediction</a>
+        <a href="{{ url_for('chat_page') }}" class="btn btn-outline-primary">Try Chatbot</a>
+      </div>
+
+    </div>
+
+    <!-- Right Side: Image Section -->
+    <div class="col-lg-4 text-center mt-4 mt-lg-0">
+      <div style="
+          background:#f2ece4;
+          padding:20px;
+          border-radius:12px;
+          border:1px solid #e0d6c8;
+          box-shadow:0 4px 16px rgba(0,0,0,0.08);
+      ">
+        <img src="{{ url_for('static', filename='loan.png') }}"
+             alt="loan"
+             class="img-fluid"
+             style="max-height:260px; border-radius:10px;">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

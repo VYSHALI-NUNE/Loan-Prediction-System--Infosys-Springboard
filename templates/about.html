@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card-custom">
+
+  <h2 style="color:#6b4f3a;">📖 About This Project</h2>
+
+  <p>
+    This Loan Prediction System uses machine learning to help users estimate loan approval.
+  </p>
+
+  <h4 style="color:#6b4f3a;">Architecture</h4>
+  <img src="{{ url_for('static', filename='system_architecture.png') }}" class="img-fluid rounded mb-3">
+
+  <h4 style="color:#6b4f3a;">Project Activity</h4>
+  <img src="{{ url_for('static', filename='Project Activity.png') }}" class="img-fluid rounded shadow-sm mb-3">
+
+  <p>
+    <strong>Contact:</strong> vyshalinune2004@gmail.com
+  </p>
+
+</div>
+{% endblock %}
